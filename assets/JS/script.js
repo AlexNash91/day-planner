@@ -7,13 +7,18 @@ $(function () {
         }
     
       setInterval(update, 1000);
-        // todo set a getitem method before the clicker
-        
-        // Event listener blcok, code not passing data into local storage, will fix later
+        // todo set a getitem method before the clicker 
+        // figure out arguments for getItem
+        const setEvents = JSON.parse(localStorage.getItem(''))
+        $('textarea').text(setEvents);
+        // Event listener block, code passing into all blocks 
         $("button").click(function() {
-            console.log("test")
-            var event = $("textarea").val()
-            localStorage.setItem("Event", JSON.stringify(event))
+          const hour = $(this).parent().attr('id')
+          console.log(typeof(hour))
+          console.log(hour)
+          console.log("test")
+          var event = $("textarea").val()
+          localStorage.setItem(hour, JSON.stringify(event))
         
     })
 })
