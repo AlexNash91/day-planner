@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Date block, still need to figure out day of week
     function update() {
         // var isoWeek = require('dayjs/plugin/isoWeek')
-        let pDate = dayjs().format('MMMM DD');
+        let pDate = dayjs().format('dddd, MMMM DD');
         $('#currentDay').text(pDate);
         }
         
@@ -30,7 +30,7 @@ $(document).ready(function () {
           }
 
           else {
-            
+
           }
 
 
