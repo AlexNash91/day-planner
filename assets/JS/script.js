@@ -19,23 +19,24 @@ $(document).ready(function () {
           const setEvents = JSON.parse(localStorage.getItem(hourId))
           // console.log(setEvents)
           $("#" + hourId).children("textarea").val(setEvents);
+          // conditional for color changes
           let hourNum = +hourId.split("-")[1]
           console.log(hourNum)
 
           if (time === hourNum) {
-
+            $("#" + hourId).attr('class', 'row time-block present')
           }
-          else if (time < hourNum) {
 
+          else if (time > hourNum) {
+            $("#" + hourId).attr('class', 'row time-block past')
           }
 
           else {
-
+            $("#" + hourId).attr('class', 'row time-block future')
           }
 
-
         }
-         
+        
         
         // Event listener block, code passing into all blocks 
         $("button").click(function() {
